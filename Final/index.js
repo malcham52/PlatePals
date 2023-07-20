@@ -10,11 +10,11 @@ const {isLoggedIn, isLoggedOut} = require('./helpers/middleware')
 
 // // Configure the Postgres database
 const pool = new pg.Pool({
-  user:"acc",
-  password:"acc_rocks_2021",
-  database:"acc",
-  host:"pgdb.accsoftwarebootcamp.com",
-  port: 5432,
+  user: "", //insert database username
+  password: "",//insert database password
+  database: "",//insert database name
+  host: "",//insert database host link
+  port: "",//insert port number
 });
 
 // Create an Express app
