@@ -1,0 +1,103 @@
+<%- include("partials/header.ejs", {title: "Competition" }) %>
+
+<%- include("partials/navbar.ejs") %>
+
+    <h1 class="text-center mt-5">Competition</h1>
+    <h4 class="text-center">Spotting Stats</h4>
+    <br><br>
+
+    <div class="container">
+      <!-- This is first table-->
+      <div class="row justify-content-center">
+        <div class="col-lg-3 border col-sm-12">
+          <h4 class="a1">User Rankings</h4>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">User</th>
+                <th scope="col">Plates Seen</th>
+              </tr>
+            </thead>
+            <tbody class="tb">
+              <%# loop through the array given by the server %>
+              <% rankings.forEach((element, index)=> { %>
+                <tr>
+                  <th scope="row">
+                    <%= index + 1 %>
+                  </th>
+                  <td>
+                    <%= element.name %>
+                  </td>
+                  <td>
+                    <%= element.count %>
+                  </td>
+                <tr>
+              <% }) %>
+            </tbody>
+          </table>
+
+        </div>
+
+        <!-- This is second table -->
+        <div class="col-lg-3 border col-sm-12">
+          <h4 class="a1">Most Recent Spottings</h4>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">User</th>
+                <th scope="col">Date Seen</th>
+              </tr>
+            </thead>
+            <tbody class="tb">
+              <%# loop through the array given by the server %>
+                <% spottings.forEach((element, index)=> { %>
+                  <tr>
+                    <th scope="row">
+                      <%= index + 1 %>
+                    </th>
+                    <td>
+                      <%= element.name %>
+                    </td>
+                    <td>
+                      <%= element.adate %>
+                    </td>
+                  <tr>
+                <% }) %>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- This is the 3rd table -->
+        <div class="col-lg-3 border col-sm-12">
+          <h4 class="a1">State Rankings</h4>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">State</th>
+                <th scope="col">Plates Seen</th>
+              </tr>
+            </thead>
+            <tbody class="tb">
+              <%# loop through the array given by the server %>
+              <% state.forEach((element, index)=> { %>
+                <tr>
+                  <th scope="row">
+                    <%= index + 1 %>
+                  </th>
+                  <td>
+                    <%= element.state %>
+                  </td>
+                  <td>
+                    <%= element.count %>
+                  </td>
+                <tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+<%- include("./partials/footer.ejs") %>

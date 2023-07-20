@@ -1,0 +1,20 @@
+<!-- Page to show user that their post has successfully been recorded to the database -->
+<%- include("partials/header.ejs", {title: "Post Confirmed"}) %>
+
+<%- include("partials/navbar.ejs") %>
+    
+    <br><br>
+    <h1 class="text-center">Post</h1>
+<div>
+<h3 class="text-center">Your post has been recorded.</h3>
+<h3 class="text-center">Need to add another?</h3>
+</div>
+<br>
+
+<!-- Link to let user create another new post -->
+<div class="text-center">
+    <a class="btn btn-primary" href="/post">New Post</a>
+    
+<div></div>
+
+<%- include("./partials/footer.ejs") %>

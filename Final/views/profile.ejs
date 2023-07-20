@@ -1,0 +1,104 @@
+<%- include("partials/header.ejs", {title: "Profile"}) %> <%-
+include("partials/navbar.ejs") %>
+
+<img
+	src="assets/Profile_Pic_Square.png"
+	class="img-fluid img-thumbnail mt-3"
+	id="profpic"
+	alt="..."
+	style="max-width: 300px; max-height: 300px"
+/>
+<!-- Code below makes sure User's name has their name properly capitalized in case they signed up using a lowercase name -->
+<!-- charAt(0).toUpperCase makes the first letter capital and .slice(1) adds in the rest of the name starting at the second character -->
+<h1>
+	<%= user.fname.charAt(0).toUpperCase() + user.fname.slice(1)+ " " +
+	user.lname.charAt(0).toUpperCase() + user.lname.slice(1)%>
+</h1>
+<div class="row">
+	<div class="mt-4 col-lg-6">
+		<h3>Spottings</h3>
+		<!-- Shows data straight from Database entries -->
+		<!-- toLocaleDateString() function changes the output of the date value to Month/Day/Year -->
+		<div>
+			<!-- Checks to see if the user has any posts by seeing if the passed in "results" data has and information inside it -->
+			<% if(results.length > 0) { %>
+			<!-- Displays a box for each posting the user has made -->
+			<%results.forEach (el => { %>
+			<div class="border border-info rounded p-2">
+				<p>
+					<span class="fw-bold"><%= el.plate_seen %></span> plate seen
+					in <span class="fw-bold"><%= el.state_observed %></span> on
+					<span class="fw-bold"
+						><%= el.date.toLocaleDateString() %></span
+					>
+				</p>
+				<!-- Checks to see if there was a comment attached to the posting -->
+				<% if(el.comment) { %>
+				<!-- If there is, post the comment -->
+				<p style="display: inline" class="fst-italic">
+					Notes: <%= el.comment %>
+				</p>
+				<% } else { %>
+				<!-- If no comment was attached, display "No comment" -->
+				<p style="display: inline" class="fst-italic">No comment</p>
+				<% } %>
+				<!-- creates a form to edit a specific post based on it's entry id -->
+				<form action="/postedit" method="get" style="display: inline">
+					<input
+						type="hidden"
+						name="entry_id"
+						value="<%= el.entry_id %>"
+					/>
+					<button type="submit">Edit</button>
+				</form>
+			</div>
+			<!-- If user has no posts, page says so and gives user option to make their first post -->
+			<% })} else { %>
+			<div class="border border-info rounded text-center p-2">
+				<p>No Posts have been made yet.</p>
+				<a class="btn btn-primary" href="/post"
+					>Make your first Post!</a
+				>
+			</div>
+			<% } %>
+		</div>
+	</div>
+
+	<div class="mt-4 col-lg-4 offset-lg-1">
+		<!-- TODO: Add javascript code to read stats from Database-->
+		<h3>Statistics</h3>
+		<!-- Checks to see if user has any posts, similar to above -->
+		<%if(results.length > 0) {%>
+		<table class="table table-hover">
+			<tbody>
+				<tr>
+					<td>Most Seen State:</td>
+					<!-- TODO: uncomment and fix the code below once the "Seen" query works-->
+					<!-- See code on line 64 as a reference -->
+					<td><%= seen[0].plate_seen %></td>
+				</tr>
+				<tr>
+					<td>Total Spottings:</td>
+					<td><%= total[0].count %></td>
+				</tr>
+				<tr>
+					<td>Last Sighting:</td>
+					<!-- Calculates days from today based on the date of the most recent sighting post -->
+					<!-- Math floor function makes the number round down so it only shows full days since last spotting -->
+					<!-- new Date() is current date. Result of date subtraction is given in miliseconds -->
+					<!-- 86,400,000 milliseconds = 1 day -->
+					<td>
+						<%= Math.floor((new Date() - results[0].date)/ 86400000)
+						%> Days Ago
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- If user has no posts, page says that -->
+		<% } else { %>
+		<p>No posts have been made yet.</p>
+		<% } %>
+	</div>
+</div>
+
+<%- include("./partials/footer.ejs") %>

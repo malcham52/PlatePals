@@ -1,0 +1,24 @@
+<!-- Landing Page for Logout -->
+<!-- Used for showing user confirmation that they have been logged out -->
+<%- include("partials/header.ejs", {title: "Logged Out"}) %>
+
+<%- include("partials/login_head.ejs") %>
+
+    <br><br>
+
+<!-- Display text on screen -->
+<div>
+<h3 class="text-center">You have successfully logged out.</h3>
+</div>
+<br><br>
+
+<!-- Provides link options for user to log back in or go back to hope page -->
+<div class="text-center">
+    <button class="btn btn-primary"><a class="text-decoration-none text-white" href="/home">Home</a></button>
+    <button class="btn btn-primary"><a class="text-decoration-none text-white" href="/login">Log In</a></button>
+<div></div>
+
+<%- include("./partials/footer.ejs") %>
+
+
+

@@ -1,0 +1,301 @@
+<!-- Test file used to test form functions. Not used in final product -->
+
+<%- include("partials/header.ejs", {title: " "}) %> <%-
+include("partials/navbar.ejs") %>
+
+<!-- Contact Page -->
+<h1 class="text-center mt-5">Contact</h1>
+<div style="border: 2px solid black; margin: 80px">
+	<div class="row col-8 offset-2">
+		<form action="/contactconfirm" method="get">
+			<div class>
+				<div class="mb-3">
+					<label for="name" class="form-label">Name:</label>
+					<input
+						type="name"
+						class="form-control"
+						id="cname"
+						name="c_name"
+					/>
+				</div>
+
+				<div class="mb-3">
+					<label for="phone" class="form-label">Phone:</label>
+					<input
+						type="name"
+						class="form-control"
+						id="cphone"
+						name="c_phone"
+					/>
+				</div>
+
+				<div class="mb-3">
+					<label for="Email" class="form-label">Email:</label>
+					<input
+						type="name"
+						class="form-control"
+						id="cemail"
+						name="c_email"
+					/>
+				</div>
+
+				<div class="mb-3">
+					<label for="comment" class="form-label">Comment:</label>
+					<div class="input input-lg">
+						<input
+							type="name"
+							class="form-control input-lg"
+							id="ccomment"
+							name="c_comment"
+						/>
+					</div>
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+<!-- Log in -->
+<h1 class="text-center mt-5">Log in</h1>
+<div class="container">
+	<div class="row col-8 offset-2">
+		<form action="/profile" method="get">
+			<div class="mb-3">
+				<label for="email" class="form-label">Email address</label>
+				<input
+					type="email"
+					class="form-control"
+					id="email"
+					name="email"
+				/>
+			</div>
+			<div class="mb-3">
+				<label for="password" class="form-label">Password</label>
+				<input
+					type="password"
+					class="form-control"
+					id="password"
+					name="password"
+				/>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+</div>
+
+<!-- Sign Up -->
+<h1 class="text-center mt-5">Sign up</h1>
+<div class="container">
+	<div class="col-8 offset-2">
+		<form action="/signupconfirm" method="get">
+			<div class="row">
+				<div class="mb-3 col-6">
+					<label for="fname" class="form-label">First Name</label>
+					<input
+						type="fname"
+						class="form-control"
+						id="fname"
+						name="fname"
+					/>
+				</div>
+
+				<div class="mb-3 col-6">
+					<label for="lname" class="form-label">Last Name</label>
+					<input
+						type="lname"
+						class="form-control"
+						id="lname"
+						name="lname"
+					/>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="mb-3 col-6">
+					<label for="email" class="form-label">Email Address</label>
+					<input
+						type="email"
+						class="form-control"
+						id="email"
+						name="email"
+					/>
+				</div>
+
+				<div class="mb-3 col-6">
+					<label for="password" class="form-label">Password</label>
+					<input
+						type="password"
+						class="form-control"
+						id="password"
+						name="password"
+					/>
+				</div>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+</div>
+
+<!-- Post -->
+<h1 class="text-center mt-5">Post</h1>
+<h4 class="text-center">record your spotting</h4>
+<br /><br />
+
+<!-- Beginning of Form Section -->
+<div class="container1">
+	<div id="dropdown1">
+		<div class="col-8 offset-2">
+			<form action="/postconfirm" method="get">
+				<div class="mb-3">
+					<p>State License Plate Spotted:</p>
+					<!-- Dropdown menu using a "select" form option -->
+					<div class="dropdown">
+						<select
+							class="form-select"
+							aria-label="Default select example"
+							id="stateseen"
+                            name="plate_seen"
+						>
+						<!-- Selected option shows "Choose a state" and allows user to choose 1 of 50 available options -->
+							<option selected>Choose a state</option>
+							<option value="alabama">Alabama</option>
+							<option value="alaska">Alaska</option>
+							<option value="arkansas">Arkansas</option>
+							<option value="california">California</option>
+							<option value="colorado">Colorado</option>
+							<option value="connecticut">Connecticut</option>
+							<option value="delaware">Delaware</option>
+							<option value="florida">Florida</option>
+							<option value="georgia">Georgia</option>
+							<option value="hawaii">Hawaii</option>
+							<option value="idaho">Idaho</option>
+							<option value="illinois">Illinois</option>
+							<option value="indiana">Indiana</option>
+							<option value="iowa">Iowa</option>
+							<option value="kansas">Kansas</option>
+							<option value="kentucky">Kentucky</option>
+							<option value="louisiana">Louisiana</option>
+							<option value="maine">Maine</option>
+							<option value="maryland">Maryland</option>
+							<option value="massachusetts">Massachusetts</option>
+							<option value="michigan">Michigan</option>
+							<option value="minnesota">Minnesota</option>
+							<option value="mississippi">Mississippi</option>
+							<option value="missouri">Missouri</option>
+							<option value="montana">Montana</option>
+							<option value="nebraska">Nebraska</option>
+							<option value="nevada">Nevada</option>
+							<option value="new-hampshire">New Hampshire</option>
+							<option value="new-jersey">New Jersey</option>
+							<option value="new-mexico">New Mexico</option>
+							<option value="new-york">New York</option>
+							<option value="north-carolina">North Carolina</option>
+							<option value="north-dakota">North Dakota</option>
+							<option value="ohio">Ohio</option>
+							<option value="oklahoma">Oklahoma</option>
+							<option value="illinois">Illinois</option>
+							<option value="indiana">Indiana</option>
+							<option value="iowa">Iowa</option>
+							<option value="kansas">Kansas</option>
+							<option value="kentucky">Kentucky</option>
+							<option value="oregon">Oregon</option>
+							<option value="pennsylvania">Pennsylvania</option>
+							<option value="rhode-island">Rhode Island</option>
+							<option value="south-carolina">South Carolina</option>
+							<option value="south-dakota">South Dakota</option>
+							<option value="tennessee">Tennessee</option>
+							<option value="texas">Texas</option>
+							<option value="utah">Utah</option>
+							<option value="vermont">Vermont</option>
+							<option value="virginia">Virginia</option>
+							<option value="washington">Washington</option>
+							<option value="west-virginia">West Virginia</option>
+							<option value="wisconsin">Wisconsin</option>
+							<option value="wyoming">Wyoming</option>
+						</select>
+					</div>
+					<br /><br />
+
+					<p>Where you spotted the plate:</p>
+					<!-- Same dropdown mechanics as above -->
+					<div class="dropdown">
+						<select
+							class="form-select"
+							aria-label="Default select example"
+							id="plateobserved"
+                            name = "state_observed"
+						>
+							<option selected>Choose a state</option>
+							<option value="alabama">Alabama</option>
+							<option value="alaska">Alaska</option>
+							<option value="arkansas">Arkansas</option>
+							<option value="california">California</option>
+							<option value="colorado">Colorado</option>
+							<option value="connecticut">Connecticut</option>
+							<option value="delaware">Delaware</option>
+							<option value="florida">Florida</option>
+							<option value="georgia">Georgia</option>
+							<option value="hawaii">Hawaii</option>
+							<option value="idaho">Idaho</option>
+							<option value="illinois">Illinois</option>
+							<option value="indiana">Indiana</option>
+							<option value="iowa">Iowa</option>
+							<option value="kansas">Kansas</option>
+							<option value="kentucky">Kentucky</option>
+							<option value="louisiana">Louisiana</option>
+							<option value="maine">Maine</option>
+							<option value="maryland">Maryland</option>
+							<option value="massachusetts">Massachusetts</option>
+							<option value="michigan">Michigan</option>
+							<option value="minnesota">Minnesota</option>
+							<option value="mississippi">Mississippi</option>
+							<option value="missouri">Missouri</option>
+							<option value="montana">Montana</option>
+							<option value="nebraska">Nebraska</option>
+							<option value="nevada">Nevada</option>
+							<option value="new-hampshire">New Hampshire</option>
+							<option value="new-jersey">New Jersey</option>
+							<option value="new-mexico">New Mexico</option>
+							<option value="new-york">New York</option>
+							<option value="north-carolina">North Carolina</option>
+							<option value="north-dakota">North Dakota</option>
+							<option value="ohio">Ohio</option>
+							<option value="oklahoma">Oklahoma</option>
+							<option value="illinois">Illinois</option>
+							<option value="indiana">Indiana</option>
+							<option value="iowa">Iowa</option>
+							<option value="kansas">Kansas</option>
+							<option value="kentucky">Kentucky</option>
+							<option value="oregon">Oregon</option>
+							<option value="pennsylvania">Pennsylvania</option>
+							<option value="rhode-island">Rhode Island</option>
+							<option value="south-carolina">South Carolina</option>
+							<option value="south-dakota">South Dakota</option>
+							<option value="tennessee">Tennessee</option>
+							<option value="texas">Texas</option>
+							<option value="utah">Utah</option>
+							<option value="vermont">Vermont</option>
+							<option value="virginia">Virginia</option>
+							<option value="washington">Washington</option>
+							<option value="west-virginia">West Virginia</option>
+							<option value="wisconsin">Wisconsin</option>
+							<option value="wyoming">Wyoming</option>
+						</select>
+					</div>
+				</div>
+
+				<!-- Creates the comment box for users to add additional info to their plate spotting -->
+                <p>
+                    <h1>(Optional) Comment: </h1>
+                    </p>
+                    <textarea cols="80" rows="4" name="comment"></textarea>
+				<input type="submit" class="btn btn-primary" value="Submit"/>
+			</form>
+		</div>
+	</div>
+</div>
+
+<%- include('partials/footer.ejs') %>

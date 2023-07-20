@@ -1,0 +1,53 @@
+<%- include("partials/header.ejs", {title: "Contact"}) %>
+
+<%- include("partials/navbar.ejs") %>
+
+    
+    <div class="text-center mt-5">
+
+        <h1>Contact Us</h1>
+    
+        <p>Have a Question? Leave us a comment.</p>
+    
+        </div>
+
+        <div style="border:2px solid black; margin:80px;" >
+        <div class="row col-8 offset-2">
+            <form action="/contactconfirm" method="post">
+                <div class>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name:</label>
+                        <!-- Validation: any letter and spaces between 1-80 characters (required) -->
+                        <input type="name" class="form-control" id="cname" name="c_name" pattern="[A-Za-z ]{1,80}" title="Only letters allowed (up to 80 characters)" required/>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone:</label>
+                        <!-- Validation: any number 0 to 9 and only allows 10 numbers (required) -->
+                        <input type="name" class="form-control" id="cphone" name="c_phone" placeholder="Ex. 1234567890. No spaces or hypens" pattern="[0-9]{10,10}" title="Only 10 numbers allowed. No spaces or hypens." required/>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Email" class="form-label">Email:</label>
+                        <!-- Validation: default requirements from email input type (required) -->
+                        <input type="email" class="form-control" id="cemail" name="c_email" required/>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="comment" class="form-label">Comment:</label>
+                    <div class="input input-lg">
+                        <!-- Validation: any characters up to 1000 (required) -->
+                        <input type="name" class="form-control input-lg" id="ccomment" name="c_comment" pattern=".{1,1000}" title="up to 1000 characters" required/>
+                    </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                </div>
+            </form>
+            </div>
+            
+
+        </div>
+
+
+
+        <%- include("./partials/footer.ejs") %>

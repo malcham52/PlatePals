@@ -1,0 +1,42 @@
+<%- include("partials/header.ejs", {title: "Sign up"}) %>
+
+<%- include("partials/login_head.ejs") %>
+<!--Sign up form allows to app first time  user using their email create a password and profile.  -->
+<br><br>
+    <div class="container">
+        <div class="col-8 offset-2">
+            <form action="/signupconfirm" method="post">
+            <div class="row">
+                <div class="mb-3 col-6">
+                    <label for="fname" class="form-label">First Name</label>
+                    <!-- Validation: any letter, 1 to 30 characters long (required) -->
+                    <input type="fname" class="form-control" id="fname" name="fname" pattern="[A-Za-z]{1,30}" title="Only letters allowed (up to 30 characters)" required/>
+                </div>
+
+                <div class="mb-3 col-6">
+                    <label for="lname" class="form-label">Last Name</label>
+                    <!-- Validation: any letter, 1 to 40 characters long (required) -->
+                    <input type="lname" class="form-control" id="lname" name="lname" pattern="[A-Za-z]{1,40}" title="Only letters allowed (up to 40 characters)" required/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="mb-3 col-6">
+                    <label for="email" class="form-label">Email Address</label>
+                    <!-- Validation: basic requirements from "email" input type (required) -->
+                    <input type="email" class="form-control" id="email" name="email" required/>
+                </div>
+
+                <div class="mb-3 col-6">
+                    <label for="password" class="form-label">Password</label>
+                    <!-- Validation: any character, 8-30 characters (required) -->
+                    <input type="password" class="form-control" id="password" name="password" pattern=".{4,30}" title="Password must be 4-30 characters" required/>
+                </div>
+            </div>
+
+                <button type="submit" class="btn btn-primary">Sign up</button>
+            </form>
+        </div>
+    </div>
+<!--After user creates a profile user's  information will be saved in PlatePals app database. -->
+    <%- include("./partials/footer.ejs") %>

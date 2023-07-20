@@ -1,0 +1,41 @@
+.navicon {
+    font-size: 24px;
+    color: azure;
+    padding-right: 10px;
+}
+
+/* This icon can be updated in future. */
+
+.a1 {
+    color: blueviolet;
+    background-color:white;
+    text-align: center;
+    /* padding-top: 80px; */
+}
+/* Navbar  color and style will be updated */
+.tb {
+    color: blue;
+    background-color: whitesmoke;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px ;
+    margin-left: 80px ;
+    
+    
+}
+
+/* .container {
+    background-color: brown;
+    margin-top: 100px;
+    margin-bottom: 1000px;
+    margin-right: 800px ;
+    margin-left: 100px ;
+} */
+
+.border {
+    margin-left: 5%;
+}
+
+#dropdown1 {
+    color: brown;
+}

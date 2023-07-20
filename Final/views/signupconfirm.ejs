@@ -1,0 +1,16 @@
+<!-- Landing page to show user that the signup was successful -->
+<%- include("partials/header.ejs", {title: "Account Created"}) %>
+
+<%- include("partials/login_head.ejs") %>
+    
+    <title>Sign Up Confirmed!</title>
+<br><br>
+    <div class="text-center">
+        <div>
+            <h3 class="mb-3">You're all signed up!</h3>
+            <!-- Informs user they need to log in after signup -->
+            <button class="btn btn-primary"><a class="text-decoration-none text-white" href="/login">Login</a></button>
+        </div>
+    </div>
+
+    <%- include("./partials/footer.ejs") %>

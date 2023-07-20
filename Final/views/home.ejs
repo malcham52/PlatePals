@@ -1,0 +1,58 @@
+<%- include("partials/header.ejs", {title: "Home"}) %>
+
+<%- include("partials/login_head.ejs") %>
+
+<!--Home page has information about Current Leaderboard and leads user login or 
+    sign up to the app for tracking or ranking fun license plate.   -->
+
+<br>
+    <h3 class="text-center">A fun website for license plate-spotters</h3>
+    <br><br>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5 border col-sm-12">
+            <h4 class="text-center a1">Current Leaderboard</h4>
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Rank</th>
+                    <th scope="col">User</th>
+                    <th scope="col">Plates Seen</th>
+                  </tr>
+                </thead>
+                <tbody class="tb">
+                  <%# loop through the array given by the server %>
+                  <% rankings.forEach((element, index)=> { %>
+                    <tr>
+                      <th scope="row">
+                        <%= index + 1 %>
+                      </th>
+                      <td>
+                        <%= element.name %>
+                      </td>
+                      <td>
+                        <%= element.count %>
+                      </td>
+                    <tr>
+                  <% }) %>
+                </tbody>
+              </table>
+        </div>
+
+
+        <div class="col-lg-5 offset-lg-1 border text-center col-sm-12">
+            <h4 class="a1 mb-3">Join the fun!</h4>
+            <!-- <button class="btn btn-primary">Log in</button>
+            <button class="btn btn-success">Sign Up</button> -->
+            <form action="/login.ejs" method="post">
+            <a class="btn btn-primary" href="/login">Log in</a>
+            <a class="btn btn-success" href="/signup">Sign up</a>
+            <!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> -->
+        
+
+     
+            
+        </div>
+    </div>
+</div>
+<%- include('partials/footer.ejs') %>
